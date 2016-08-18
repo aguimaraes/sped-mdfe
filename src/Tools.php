@@ -102,9 +102,9 @@ class Tools extends BaseTools
     public function addProtocolo($pathMDFefile = '', $pathProtfile = '', $saveFile = false)
     {
         //carrega a MDFe
-        $docnfe = new Dom();
-        $docnfe->loadXMLFile($pathMDFefile);
-        $nodemdfe = $docnfe->getNode('MDFe', 0);
+        $docmdfe = new Dom();
+        $docmdfe->loadXMLFile($pathMDFefile);
+        $nodemdfe = $docmdfe->getNode('MDFe', 0);
         if ($nodemdfe == '') {
             $msg = "O arquivo indicado como MDFe não é um xml de MDFe!";
             throw new Exception\RuntimeException($msg);
@@ -122,16 +122,16 @@ class Tools extends BaseTools
             throw new Exception\RuntimeException($msg);
         }
         //carrega dados da NFe
-        $tpAmb = $docnfe->getNodeValue('tpAmb');
+        $tpAmb = $docmdfe->getNodeValue('tpAmb');
         $anomes = date(
             'Ym',
             DateTime::convertSefazTimeToTimestamp($docmdfe->getNodeValue('dhEmi'))
         );
-        $infMDFe = $docnfe->getNode("infMDFe", 0);
+        $infMDFe = $docmdfe->getNode("infMDFe", 0);
         $versao = $infMDFe->getAttribute("versao");
         $chaveId = $infMDFe->getAttribute("Id");
         $chaveMDFe = preg_replace('/[^0-9]/', '', $chaveId);
-        $digValueMDFe = $docnfe->getNodeValue('DigestValue');
+        $digValueMDFe = $docmdfe->getNodeValue('DigestValue');
         //carrega os dados do protocolo
         for ($i = 0; $i < $nodeprots->length; $i++) {
             $nodeprot = $nodeprots->item($i);
