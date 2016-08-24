@@ -238,7 +238,7 @@ class Response
             'xMotivo' => '',
             'aEvent' => array()
         );
-        $tag = $dom->getNode('retEvento');
+        $tag = $dom->getNode('retEventoMDFe');
         if (! isset($tag)) {
             return $aResposta;
         }
