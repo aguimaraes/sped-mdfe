@@ -866,9 +866,9 @@ class Tools extends BaseTools
         $lastMsg = $this->oSoap->lastMsg;
         $this->soapDebug = $this->oSoap->soapDebug;
         //salva mensagens
-        $filename = "$chMDFe-$aliasEvento-eventoMDFe.xml";
+        $filename = "$chave-$aliasEvento-eventoMDFe.xml";
         $this->zGravaFile('mdfe', $tpAmb, $filename, $lastMsg);
-        $filename = "$chMDFe-$aliasEvento-retEventoMDFe.xml";
+        $filename = "$chave-$aliasEvento-retEventoMDFe.xml";
         $this->zGravaFile('mdfe', $tpAmb, $filename, $retorno);
         //tratar dados de retorno
         $this->aLastRetEvent = Response::readReturnSefaz($servico, $retorno);
