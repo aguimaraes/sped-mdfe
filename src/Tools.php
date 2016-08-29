@@ -158,7 +158,7 @@ class Tools extends BaseTools
         $procmdfe->preserveWhiteSpace = false;
         //cria a tag nfeProc
         $mdfeProc = $procmdfe->createElement('mdfeProc');
-        $procmdef->appendChild($mdfeProc);
+        $procmdfe->appendChild($mdfeProc);
         //estabele o atributo de versão
         $mdfeProcAtt1 = $mdfeProc->appendChild($procmdfe->createAttribute('versao'));
         $mdfeProcAtt1->appendChild($procmdfe->createTextNode($protver));
