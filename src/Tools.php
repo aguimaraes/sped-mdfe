@@ -166,14 +166,14 @@ class Tools extends BaseTools
         $mdfeProcAtt2 = $mdfeProc->appendChild($procmdfe->createAttribute('xmlns'));
         $mdfeProcAtt2->appendChild($procmdfe->createTextNode($this->urlPortal));
         //inclui a tag MDFe
-        $node = $procmdef->importNode($nodemdfe, true);
+        $node = $procmdfe->importNode($nodemdfe, true);
         $mdfeProc->appendChild($node);
         //cria tag protNFe
         $protMDFe = $procmdfe->createElement('protMDFe');
         $mdfeProc->appendChild($protMDFe);
         //estabele o atributo de versão
         $protMDFeAtt1 = $protMDFe->appendChild($procmdfe->createAttribute('versao'));
-        $protMDFeAtt1->appendChild($procmdef->createTextNode($versao));
+        $protMDFeAtt1->appendChild($procmdfe->createTextNode($versao));
         //cria tag infProt
         $nodep = $procmdfe->importNode($infProt, true);
         $protMDFe->appendChild($nodep);
