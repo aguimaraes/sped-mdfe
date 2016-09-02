@@ -622,7 +622,8 @@ class Tools extends BaseTools
         }
         $tagAdic = "<evCancMDFe><descEvento>Cancelamento</descEvento>"
                 . "<nProt>$nProt</nProt><xJust>$xJust</xJust></evCancMDFe>";
-        $retorno = $this->zSefazEvento($siglaUF, $chMDFe, $tpAmb, $tpEvento, $nSeqEvento, $tagAdic);
+        $cUF = substr($chMDFe, 0, 2);
+        $retorno = $this->zSefazEvento($siglaUF, $chMDFe, $cUF, $tpAmb, $tpEvento, $nSeqEvento, $tagAdic);
         $aRetorno = $this->aLastRetEvent;
         return $retorno;
     }
